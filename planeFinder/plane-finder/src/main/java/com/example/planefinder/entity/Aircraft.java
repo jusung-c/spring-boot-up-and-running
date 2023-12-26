@@ -2,26 +2,33 @@ package com.example.planefinder.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 import java.time.Instant;
 
-@Data
+@Entity
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Aircraft {
     @Id
+    @GeneratedValue
     private Long id;
     private String callsign, squawk, reg, flightno, route, type, category;
+
     private int altitude, heading, speed;
     @JsonProperty("vert_rate")
     private int vertRate;
     @JsonProperty("selected_altitude")
     private int selectedAltitude;
+
     private double lat, lon, barometer;
     @JsonProperty("polar_distance")
     private double polarDistance;
@@ -40,42 +47,26 @@ public class Aircraft {
     @JsonProperty("bds40_seen_time")
     private Instant bds40SeenTime;
 
-    public String getLastSeenTime() {
-        return lastSeenTime.toString();
+    public Aircraft(String callsign, String reg, String flightno, String type,
+                    int altitude, int heading, int speed,
+                    double lat, double lon) {
+
+        this(null, callsign, "sqwk", reg, flightno, "route", type, "ct",
+                altitude, heading, speed, 0, 0,
+                lat, lon, 0D, 0D, 0D,
+                false, true,
+                Instant.now(), Instant.now(), Instant.now());
     }
 
-    public void setLastSeenTime(String lastSeenTime) {
-        if (null != lastSeenTime) {
-            this.lastSeenTime = Instant.parse(lastSeenTime);
-        } else {
-            // 0초 후 시간을 나타내는 Instant
-            this.lastSeenTime = Instant.ofEpochSecond(0);
-        }
+    public void setLastSeenTime(long lastSeenTime) {
+        this.lastSeenTime = Instant.ofEpochSecond(lastSeenTime);
     }
 
-    public String getPosUpdateTime() {
-        return posUpdateTime.toString();
+    public void setPosUpdateTime(long posUpdateTime) {
+        this.posUpdateTime = Instant.ofEpochSecond(posUpdateTime);
     }
 
-    public void setPosUpdateTime(String posUpdateTime) {
-        if (null != posUpdateTime) {
-            this.posUpdateTime = Instant.parse(posUpdateTime);
-        } else {
-            // 0초 후 시간을 나타내는 Instant
-            this.posUpdateTime = Instant.ofEpochSecond(0);
-        }
-    }
-
-    public String getBds40SeenTime() {
-        return bds40SeenTime.toString();
-    }
-
-    public void setBds40SeenTime(String bds40SeenTime) {
-        if (null != bds40SeenTime) {
-            this.bds40SeenTime = Instant.parse(bds40SeenTime);
-        } else {
-            // 0초 후 시간을 나타내는 Instant
-            this.bds40SeenTime = Instant.ofEpochSecond(0);
-        }
+    public void setBds40SeenTime(long bds40SeenTime) {
+        this.bds40SeenTime = Instant.ofEpochSecond(bds40SeenTime);
     }
 }
