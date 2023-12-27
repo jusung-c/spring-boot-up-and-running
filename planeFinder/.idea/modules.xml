@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/plane-finder.main.iml" filepath="$PROJECT_DIR$/.idea/modules/plane-finder.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/redis.main.iml" filepath="$PROJECT_DIR$/.idea/modules/redis.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sbur-repository/sbur-repository.iml" filepath="$PROJECT_DIR$/sbur-repository/sbur-repository.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/up-and-running.iml" filepath="$PROJECT_DIR$/.idea/up-and-running.iml" />
     </modules>
   </component>
