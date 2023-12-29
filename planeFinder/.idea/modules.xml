@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/plane-finder.main.iml" filepath="$PROJECT_DIR$/.idea/modules/plane-finder.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/redis.main.iml" filepath="$PROJECT_DIR$/.idea/modules/redis.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sbur-jpa/sbur-jpa.iml" filepath="$PROJECT_DIR$/sbur-jpa/sbur-jpa.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/up-and-running.iml" filepath="$PROJECT_DIR$/.idea/up-and-running.iml" />
     </modules>
   </component>

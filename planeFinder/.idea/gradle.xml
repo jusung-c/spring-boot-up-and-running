@@ -20,6 +20,14 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/sbur-mongo" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/sbur-mongo" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/sbur-repository" />
         <option name="modules">
           <set>
